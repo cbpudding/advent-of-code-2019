@@ -3,7 +3,12 @@ use std::fs::File;
 use std::io::{BufRead, BufReader};
 
 fn calculate_fuel(mass: usize) -> usize {
-	mass / 3 - 2
+	let fuel = if mass <= 6 { 0 } else { mass / 3 - 2 };
+	if fuel == 0 {
+		fuel
+	} else {
+		fuel + calculate_fuel(fuel)
+	}
 }
 
 fn main() {
