@@ -34,7 +34,7 @@ mod tests {
 	fn known_values() {
 		assert_eq!(calculate_fuel(12), 2);
 		assert_eq!(calculate_fuel(14), 2);
-		assert_eq!(calculate_fuel(1969), 654);
-		assert_eq!(calculate_fuel(100756), 33583);
+		assert_eq!(calculate_fuel(1969), 966);
+		assert_eq!(calculate_fuel(100756), 50346);
 	}
 }
