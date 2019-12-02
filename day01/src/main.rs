@@ -3,11 +3,11 @@ use std::fs::File;
 use std::io::{BufRead, BufReader};
 
 fn calculate_fuel(mass: usize) -> usize {
-	let fuel = if mass <= 6 { 0 } else { mass / 3 - 2 };
-	if fuel == 0 {
-		fuel
-	} else {
+	if mass > 6 {
+		let fuel = mass / 3 - 2;
 		fuel + calculate_fuel(fuel)
+	} else {
+		0
 	}
 }
 
@@ -28,7 +28,7 @@ fn main() {
 
 #[cfg(test)]
 mod tests {
-	use super::*;
+	use super::calculate_fuel;
 
 	#[test]
 	fn known_values() {
